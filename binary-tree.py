@@ -1,4 +1,4 @@
-class Node:
+class Tree:
     """
     Tree node: left and right child + data, which can be any object
     """
@@ -18,32 +18,32 @@ class Node:
         """
         if data < self.data:
             if self.left is None:
-                self.left = Node(data)
+                self.left = Tree(data)
             else:
                 self.left.insert(data)
         elif data > self.data:
             if self.right is None:
-                self.right = Node(data)
+                self.right = Tree(data)
             else:
                 self.right.insert(data)
 
-    def print_tree(self):
+    def printTree(self):
         """
         Print tree path in order
         """
         if self.left:
-            self.left.print_tree()
+            self.left.printTree()
         print(self.data),
         if self.right:
-            self.right.print_tree()
+            self.right.printTree()
 
 # test binary tree
-node = Node("Rinne")
-node.insert("Webber")
-node.insert("Fisher")
-node.insert("Jones")
-node.insert("Gausted")
+tree = Tree("Rinne")
+tree.insert("Webber")
+tree.insert("Fisher")
+tree.insert("Jones")
+tree.insert("Gausted")
 
-node.print_tree()
+tree.printTree()
 
 pass
