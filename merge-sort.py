@@ -1,3 +1,5 @@
+# BEST: O(n log n)
+
 def merge_sort(m):
     if len(m) <= 1:
         return m
@@ -5,7 +7,6 @@ def merge_sort(m):
     middle = len(m) // 2
     left = m[:middle]
     right = m[middle:]
-#recursive splitting of m
     left = merge_sort(left)
     right = merge_sort(right)
 
@@ -14,6 +15,7 @@ def merge_sort(m):
 
 def merge(left, right):
     result = []
+    # set left & right indices at 0
     left_idx, right_idx = 0, 0
     while left_idx < len(left) and right_idx < len(right):
         # change the direction of this comparison to change the direction of the sort
@@ -23,12 +25,12 @@ def merge(left, right):
         else:
             result.append(right[right_idx])
             right_idx += 1
-
     if left:
         result.extend(left[left_idx:])
     if right:
         result.extend(right[right_idx:])
     return result
+
 data = [ 2, 10, 111, 565, 3, 25, 1001, 12]
 print(merge_sort(data))
 
