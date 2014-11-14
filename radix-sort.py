@@ -1,5 +1,3 @@
-__author__ = 'Melanie & Nathan'
-
 def radix_sort(unSortedList):
     maxCipher = len(unSortedList)
     mod = 10
