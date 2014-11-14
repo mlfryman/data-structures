@@ -24,11 +24,6 @@ print('Factorial({0}) = {1}'.format(5, factorial(5)))
 for x in range(20):
     print('fibinacci({0}) = {1}'.format(x, fibinacci(x)))
 
-# test binary tree
-myTree = BinaryTree("Rinne")
-myTree.insertLeft("Webber")
-myTree.insertRight("Fisher")
-myTree.insertRight("Jones")
-printTree(myTree)
+
 
 x = 42
