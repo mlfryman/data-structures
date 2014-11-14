@@ -1,4 +1,4 @@
-__author__ = 'Melanie'
+__author__ = 'Melanie & Nathan'
 
 def radix_sort(unSortedList):
     maxCipher = len(unSortedList)
@@ -6,24 +6,22 @@ def radix_sort(unSortedList):
     div = 1
 
     while True:
-        sortedList = [list() for i in range(mod)]
-
+        buckets = [[], [], [], [], [], [], [], [], [], []]
         for val in unSortedList:
             least_digit = val % mod
             least_digit //= div
-            sortedList[least_digit].append(val)
-        #mod = mod * 10
-        #div = div * 10
+            buckets[least_digit].append(val)
+        mod = mod * 10
+        div = div * 10
+        if len(buckets[0]) == maxCipher:
+            return buckets[0]
+        unSortedList = [];
+        for b in buckets:
+            for num in b:
+                unSortedList.append(num)
 
-        if len(sortedList[0]) == maxCipher:
-            return sortedList[0]
-        unSortedList = []
-        for x in sortedList:
-            for y in x:
-                unSortedList.append(y)
-        return sortedList
-
-data = [ 2, 10, 111, 565, 800 ]
-print(radix_sort(data))
+data = [ 2, 10, 111, 565, 800, 1, 345, 676, 6666, 67, 45, 906, 453, 4, 23]
+x = radix_sort(data)
+print(x)
 
 pass
